@@ -1,13 +1,14 @@
-USE DigitechTstDN;  -- Replace with your database name if different
+-- Make sure you're in the right DB
+USE DigitechTestDB;
 GO
 
--- Drop the stored procedure if it exists
+-- Drop if it exists
 IF OBJECT_ID('dbo.CreatePatient', 'P') IS NOT NULL
     DROP PROCEDURE dbo.CreatePatient;
 GO
 
--- Now create the stored procedure
-CREATE PROCEDURE CreatePatient
+-- Create correct version
+CREATE PROCEDURE dbo.CreatePatient
     @PatientKEY UNIQUEIDENTIFIER,
     @LastName VARCHAR(50),
     @FirstName VARCHAR(50),
