@@ -1,0 +1,11 @@
+C:\Users\clc\source\repos\DigitechProject\bin\Debug\DigitechProject.exe.config
+C:\Users\clc\source\repos\DigitechProject\bin\Debug\DigitechProject.exe
+C:\Users\clc\source\repos\DigitechProject\bin\Debug\DigitechProject.pdb
+C:\Users\clc\source\repos\DigitechProject\obj\Debug\DigitechProject.csproj.AssemblyReference.cache
+C:\Users\clc\source\repos\DigitechProject\obj\Debug\DigitechProject.MainForm.resources
+C:\Users\clc\source\repos\DigitechProject\obj\Debug\DigitechProject.PatientForm.resources
+C:\Users\clc\source\repos\DigitechProject\obj\Debug\DigitechProject.Properties.Resources.resources
+C:\Users\clc\source\repos\DigitechProject\obj\Debug\DigitechProject.csproj.GenerateResource.cache
+C:\Users\clc\source\repos\DigitechProject\obj\Debug\DigitechProject.csproj.CoreCompileInputs.cache
+C:\Users\clc\source\repos\DigitechProject\obj\Debug\DigitechProject.exe
+C:\Users\clc\source\repos\DigitechProject\obj\Debug\DigitechProject.pdb
