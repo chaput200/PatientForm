@@ -134,11 +134,13 @@ namespace DigitechProject
         // METHOD FOR GETTING PATIENT OBJ BY KEY
         public static Patient GetPatientByKey(Guid patientKey)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["PatientDB"].ConnectionString;
+            //var connectionString = ConfigurationManager.ConnectionStrings["PatientDB"].ConnectionString;
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            var connectionString = ConfigurationManager.ConnectionStrings["PatientDB"].ConnectionString;
+            using (var conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=DigitechTestDB;Integrated Security=True;"))
+            //using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Patient WHERE PatientKEY = @PatientKEY", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.Patients WHERE PatientKEY = @PatientKEY", conn);
                 cmd.Parameters.AddWithValue("@PatientKEY", patientKey);
                 conn.Open();
 
@@ -157,7 +159,7 @@ namespace DigitechProject
                         State = reader["State"].ToString(),
                         ZipCode = reader["ZipCode"].ToString(),
                         HomePhone = reader["HomePhone"].ToString(),
-                        BusineesPhone = reader["BusinessPhone"].ToString(),
+                        BusineesPhone = reader["BusineesPhone"].ToString(),
                         CellPhone = reader["CellPhone"].ToString(),
                         EmailAddress = reader["EmailAddress"].ToString()
                     };
@@ -170,6 +172,7 @@ namespace DigitechProject
         {
             var connectionString = ConfigurationManager.ConnectionStrings["PatientDB"].ConnectionString;
 
+            //using (var conn = new SqlConnection(connectionString))
             using (var conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=DigitechTestDB;Integrated Security=True;"))
             using (SqlCommand cmd = new SqlCommand("dbo.CreatePatient", conn))
             {
@@ -199,9 +202,11 @@ namespace DigitechProject
 
         public static void UpdatePatient(Patient patient)
         {
-            var connectionString = ConfigurationManager.ConnectionStrings["PatientDB"].ConnectionString;
 
+            var connectionString = ConfigurationManager.ConnectionStrings["PatientDB"].ConnectionString;
             using (var conn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=DigitechTestDB;Integrated Security=True;"))
+            //using (var conn = new SqlConnection(connectionString))
+            //using (SqlCommand cmd = new SqlCommand("dbo.UpdatePatient", conn))
             using (SqlCommand cmd = new SqlCommand("dbo.UpdatePatient", conn))
             {
                 cmd.CommandType = CommandType.StoredProcedure;

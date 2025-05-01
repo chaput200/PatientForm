@@ -1,4 +1,4 @@
-USE DigitechTstDN;  -- Replace with your database name if different
+USE DigitechTestDB;  -- Replace with your database name if different
 GO
 
 -- Drop the stored procedure if it exists
